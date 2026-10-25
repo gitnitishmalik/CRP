@@ -1,0 +1,59 @@
+term,coefficient
+num__rep_n_late,0.2117657303642952
+log__annual_income,-0.19797991798708772
+log__loan_to_income,0.1931448076407509
+num__years_employed,-0.18894501565053606
+num__rep_n_missed,0.17190910098634798
+num__bureau_n_active,-0.1499475380651854
+num__bureau_mean_dpd,0.11806971364698648
+num__bureau_n_dpd_30_plus,0.10507545022867572
+cat__loan_type_Business Loan,-0.09208821205683311
+num__interest_rate_pct,0.08677600707735424
+cat__occupation_sector_Retail,-0.07595474831948117
+cat__housing_type_Living with Family,0.07558661292105107
+cat__occupation_sector_IT/Tech,0.07114777242414008
+cat__loan_type_Mortgage,0.06975854933971123
+cat__education_level_Doctorate,0.06928690171743741
+cat__employment_type_Unemployed,0.06374900479662383
+cat__region_Central,-0.05537447625243857
+cat__disbursal_channel_Branch,-0.054297903605308145
+cat__loan_type_Auto Loan,-0.05390916900634871
+cat__education_level_Vocational,-0.053403950429816535
+cat__disbursal_channel_Mobile App,0.05332239913492447
+cat__occupation_sector_Hospitality,0.05295018135530157
+cat__region_South,0.052382119787192934
+num__years_at_residence,-0.04897159809599467
+num__bureau_share_non_bank,0.04779997491690744
+cat__loan_type_Personal Loan,0.04323436198327489
+log__bureau_debt_to_income,0.039776021004326485
+cat__employment_type_Business Owner,-0.034957128731852874
+cat__housing_type_Rented,-0.030926579600137012
+cat__occupation_sector_Government,-0.030699912635535998
+cat__region_West,-0.0299096789205424
+num__num_dependents,0.029592589767711144
+num__rep_n_missed_last3,0.029172834165747043
+cat__city_tier_Tier 1,-0.028367688776642388
+cat__loan_type_Credit Card,0.027347778208445077
+cat__housing_type_Mortgaged,-0.026482036386582274
+num__n_loans_customer,0.02510571570838195
+cat__occupation_sector_Construction,-0.025055659553518777
+cat__housing_type_Owned,-0.02383468846608335
+num__rep_max_dpd,0.018978689163304717
+cat__occupation_sector_Healthcare,-0.017985126398606523
+cat__region_East,0.017859439057644727
+cat__city_tier_Tier 3,0.017349935986015752
+cat__employment_type_Salaried,-0.01643599005971067
+cat__occupation_sector_Education,0.016200617400793732
+cat__education_level_High School,-0.013074394948198434
+cat__disbursal_channel_Online,-0.01287715736159047
+cat__employment_type_Contract,-0.01231656334279062
+cat__region_North,0.009385904796392137
+cat__occupation_sector_Finance,0.008887170634762846
+cat__disbursal_channel_Partner/DSA,0.008195970300222212
+cat__education_level_Master's,-0.007379136018148699
+cat__employment_type_Self-Employed,-0.0056960141940182955
+cat__city_tier_Tier 2,0.005361061258876916
+cat__occupation_sector_Manufacturing,-0.004304048060849638
+num__bureau_n_written_off,0.004170198742645898
+cat__education_level_Bachelor's,-0.0010861118530240221
+cat__occupation_sector_Other,-0.000842938378756572

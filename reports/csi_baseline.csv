@@ -1,0 +1,11 @@
+feature,label,csi_development_vs_recent,status
+rep_n_late,Late payments (12 months),0.0007088601033434619,Stable
+rep_n_missed,Missed payments (12 months),0.001018776419587931,Stable
+annual_income,Annual income,0.0008991013104525101,Stable
+years_employed,Years in current job,0.0016862921154183,Stable
+loan_to_income,Loan / annual income,0.0015678568557984476,Stable
+bureau_n_active,Bureau: active lines,0.00013978370148624855,Stable
+bureau_mean_dpd,Bureau: average days past due,0.0008636352352399371,Stable
+bureau_n_dpd_30_plus,Bureau: lines 30+ days late,8.750674033258094e-05,Stable
+interest_rate_pct,Interest rate,0.002186544255154849,Stable
+loan_type,Loan type,8.256071147776315e-05,Stable

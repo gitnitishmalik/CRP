@@ -1,0 +1,41 @@
+feature,label,mean_abs_shap_logistic,mean_abs_shap_lightgbm
+rep_n_late,Late payments (12 months),0.17465845849561146,0.11263040913614308
+rep_n_missed,Missed payments (12 months),0.1469113567815151,0.008280649193169384
+annual_income,Annual income,0.14671387666672822,0.21182750690151886
+years_employed,Years in current job,0.14216577749955467,0.15300536234457174
+loan_to_income,Loan / annual income,0.13640212505976068,0.060370355866804275
+bureau_n_active,Bureau: active lines,0.11802217165536683,0.06763159128461214
+bureau_mean_dpd,Bureau: average days past due,0.0917873832364527,0.12547458355684105
+bureau_n_dpd_30_plus,Bureau: lines 30+ days late,0.08743126270346702,0.008318312330186364
+interest_rate_pct,Interest rate,0.07084253339931858,0.061104446945129016
+loan_type,Loan type,0.04492208856201733,0.028384794975187436
+bureau_share_non_bank,Bureau: share from non-bank lenders,0.03959412528421137,0.03097633392328868
+years_at_residence,Years at current address,0.03669986039258368,0.057453393144704865
+disbursal_channel,Disbursal channel,0.03235555398362489,0.021741738889583553
+region,Region,0.031721729380992186,0.020565420699560192
+bureau_debt_to_income,Bureau: debt / income,0.031281558400398285,0.025276839306811277
+occupation_sector,Occupation sector,0.030308328730107876,0.04123024049854857
+housing_type,Housing,0.026142269347142748,0.01537704166777052
+num_dependents,Dependents,0.022463915775489993,0.009699331831945612
+n_loans_customer,Loans held with the bank,0.021754734629668444,0.013365515592725417
+rep_n_missed_last3,"Missed payments, last 3 months",0.019708702646405455,0.0
+city_tier,City tier,0.017454042501484676,0.008854197172408462
+rep_max_dpd,Worst days past due (12 months),0.016419875155435366,0.04760093503391809
+education_level,Education,0.01199335108571344,0.013670183360900935
+employment_type,Employment type,0.010095809519173634,0.0028059514431453413
+bureau_n_written_off,Bureau: written-off lines,0.0035357426272330213,0.0033181272600642125
+loan_amount,Loan amount,,0.03378175978012035
+tenure_months,Tenure (months),,0.02713470239651826
+emi_to_income,Instalment / monthly income,,0.06484294445568409
+bureau_n_lines,Bureau: credit lines,,0.01052114127950394
+bureau_written_off_share,Bureau: share of lines written off,,0.014935971269383383
+bureau_max_dpd,Bureau: worst days past due,,0.06771497300631939
+bureau_total_outstanding,Bureau: total owed elsewhere,,0.021901795095072778
+bureau_active_utilization,Bureau: utilisation of active lines,,0.056079549606906164
+bureau_no_file,No bureau record,,0.0
+rep_mean_dpd,Average days past due (12 months),,0.1502194923052954
+rep_mean_dpd_last3,"Average days past due, last 3 months",,0.019005445872309706
+rep_paid_ratio,Share of instalments paid,,0.0027427617378220186
+rep_max_missed_streak,Longest run of missed payments,,0.001211645638789029
+rep_months_since_missed,Months since last missed payment,,0.01364598181850719
+rep_dpd_trend,Days-past-due trend (last vs first 3 months),,0.029257860798340155

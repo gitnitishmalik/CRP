@@ -1,0 +1,24 @@
+# secrets - never commit API keys
+.streamlit/secrets.toml
+.env
+
+# the employer's brief stays local; it shouldn't be published with the repo
+docs/assignment_brief.pdf
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+
+# generated outputs (rebuilt by the pipeline), except the brief's required output: the clean dataset and its DQ log
+data/processed/*
+!data/processed/accounts_clean.csv
+!data/processed/dq_log.csv
+data/review/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

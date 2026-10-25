@@ -1,0 +1,353 @@
+{
+  "champion": "logistic",
+  "challenger": "lightgbm",
+  "materiality_auc": 0.01,
+  "lightgbm_auc_gain_on_test": -0.00904873223624758,
+  "split": {
+    "train_accounts": 11737,
+    "test_accounts": 2948,
+    "oot_development_accounts": 9764,
+    "oot_test_accounts": 2851
+  },
+  "models": {
+    "logistic": {
+      "params": {
+        "C": 0.03,
+        "numeric": [
+          "annual_income",
+          "years_employed",
+          "years_at_residence",
+          "num_dependents",
+          "loan_to_income",
+          "interest_rate_pct",
+          "n_loans_customer",
+          "bureau_n_active",
+          "bureau_n_written_off",
+          "bureau_mean_dpd",
+          "bureau_n_dpd_30_plus",
+          "bureau_debt_to_income",
+          "bureau_share_non_bank",
+          "rep_n_late",
+          "rep_n_missed",
+          "rep_max_dpd",
+          "rep_n_missed_last3"
+        ]
+      },
+      "cv_auc_mean": 0.6719213285601786,
+      "cv_auc_std": 0.006806789832674491,
+      "train": {
+        "n": 11737,
+        "default_rate": 0.16119962511715089,
+        "avg_pd": 0.16117332023632458,
+        "auc": 0.6846906114542856,
+        "gini": 0.3693812229085711,
+        "ks": 0.2779370947358475,
+        "brier": 0.12590545597807007
+      },
+      "test": {
+        "n": 2948,
+        "default_rate": 0.16010854816824965,
+        "avg_pd": 0.16208150351794512,
+        "auc": 0.6872544221133047,
+        "gini": 0.37450884422660935,
+        "ks": 0.2880431806357986,
+        "brier": 0.12451451164579348
+      },
+      "out_of_time": {
+        "n": 2851,
+        "default_rate": 0.1606453875833041,
+        "avg_pd": 0.1610074193460517,
+        "auc": 0.7004372286709599,
+        "gini": 0.40087445734191984,
+        "ks": 0.32344063927357264,
+        "brier": 0.1239246457997964
+      },
+      "psi_train_vs_test": 0.002780817432611027,
+      "psi_development_vs_recent": 0.007203645731742463
+    },
+    "lightgbm": {
+      "params": {
+        "num_leaves": 7,
+        "min_child_samples": 100,
+        "n_estimators": 700
+      },
+      "cv_auc_mean": 0.6680938458892142,
+      "cv_auc_std": 0.0050752357246036375,
+      "train": {
+        "n": 11737,
+        "default_rate": 0.16119962511715089,
+        "avg_pd": 0.16087663315424558,
+        "auc": 0.7632201877515872,
+        "gini": 0.5264403755031744,
+        "ks": 0.38535970330825475,
+        "brier": 0.11647442339434934
+      },
+      "test": {
+        "n": 2948,
+        "default_rate": 0.16010854816824965,
+        "avg_pd": 0.16071042081442277,
+        "auc": 0.6782056898770571,
+        "gini": 0.3564113797541142,
+        "ks": 0.2768064948933491,
+        "brier": 0.12588728843947639
+      },
+      "out_of_time": {
+        "n": 2851,
+        "default_rate": 0.1606453875833041,
+        "avg_pd": 0.1608187678914235,
+        "auc": 0.6954581868148912,
+        "gini": 0.3909163736297825,
+        "ks": 0.3072589813447884,
+        "brier": 0.12451373992056049
+      },
+      "psi_train_vs_test": 0.003169938617130841,
+      "psi_development_vs_recent": 0.004388872618640434
+    }
+  },
+  "tuning": [
+    {
+      "model": "logistic",
+      "params": {
+        "C": 0.03,
+        "numeric": [
+          "annual_income",
+          "years_employed",
+          "years_at_residence",
+          "num_dependents",
+          "loan_to_income",
+          "interest_rate_pct",
+          "n_loans_customer",
+          "bureau_n_active",
+          "bureau_n_written_off",
+          "bureau_mean_dpd",
+          "bureau_n_dpd_30_plus",
+          "bureau_debt_to_income",
+          "bureau_share_non_bank",
+          "rep_n_late",
+          "rep_n_missed",
+          "rep_max_dpd",
+          "rep_n_missed_last3"
+        ]
+      },
+      "cv_auc_mean": 0.6719213285601786,
+      "cv_auc_std": 0.006806789832674491
+    },
+    {
+      "model": "logistic",
+      "params": {
+        "C": 0.1,
+        "numeric": [
+          "annual_income",
+          "years_employed",
+          "years_at_residence",
+          "num_dependents",
+          "loan_to_income",
+          "interest_rate_pct",
+          "n_loans_customer",
+          "bureau_n_active",
+          "bureau_n_written_off",
+          "bureau_mean_dpd",
+          "bureau_n_dpd_30_plus",
+          "bureau_debt_to_income",
+          "bureau_share_non_bank",
+          "rep_n_late",
+          "rep_n_missed",
+          "rep_max_dpd",
+          "rep_n_missed_last3"
+        ]
+      },
+      "cv_auc_mean": 0.6708268369262186,
+      "cv_auc_std": 0.006668455810373533
+    },
+    {
+      "model": "logistic",
+      "params": {
+        "C": 0.3,
+        "numeric": [
+          "annual_income",
+          "years_employed",
+          "years_at_residence",
+          "num_dependents",
+          "loan_to_income",
+          "interest_rate_pct",
+          "n_loans_customer",
+          "bureau_n_active",
+          "bureau_n_written_off",
+          "bureau_mean_dpd",
+          "bureau_n_dpd_30_plus",
+          "bureau_debt_to_income",
+          "bureau_share_non_bank",
+          "rep_n_late",
+          "rep_n_missed",
+          "rep_max_dpd",
+          "rep_n_missed_last3"
+        ]
+      },
+      "cv_auc_mean": 0.6704982302970282,
+      "cv_auc_std": 0.006682778435196474
+    },
+    {
+      "model": "logistic",
+      "params": {
+        "C": 1.0,
+        "numeric": [
+          "annual_income",
+          "years_employed",
+          "years_at_residence",
+          "num_dependents",
+          "loan_to_income",
+          "interest_rate_pct",
+          "n_loans_customer",
+          "bureau_n_active",
+          "bureau_n_written_off",
+          "bureau_mean_dpd",
+          "bureau_n_dpd_30_plus",
+          "bureau_debt_to_income",
+          "bureau_share_non_bank",
+          "rep_n_late",
+          "rep_n_missed",
+          "rep_max_dpd",
+          "rep_n_missed_last3"
+        ]
+      },
+      "cv_auc_mean": 0.6703741544914201,
+      "cv_auc_std": 0.006619355750469942
+    },
+    {
+      "model": "lightgbm",
+      "params": {
+        "num_leaves": 7,
+        "min_child_samples": 100,
+        "n_estimators": 700
+      },
+      "cv_auc_mean": 0.6680938458892142,
+      "cv_auc_std": 0.0050752357246036375
+    },
+    {
+      "model": "lightgbm",
+      "params": {
+        "num_leaves": 15,
+        "min_child_samples": 80,
+        "n_estimators": 500
+      },
+      "cv_auc_mean": 0.6670807944023749,
+      "cv_auc_std": 0.00616765719152773
+    },
+    {
+      "model": "lightgbm",
+      "params": {
+        "num_leaves": 31,
+        "min_child_samples": 60,
+        "n_estimators": 300
+      },
+      "cv_auc_mean": 0.6677902513382094,
+      "cv_auc_std": 0.0075445458618718444
+    }
+  ],
+  "excluded_features": {
+    "gender": "protected characteristic under ECOA / Regulation B",
+    "marital_status": "protected characteristic under ECOA / Regulation B",
+    "age": "protected characteristic under ECOA; dropping it cost no accuracy and made the model fairer to younger borrowers (docs/model_report.md)",
+    "loan_purpose": "unrelated to the product it is attached to (data_quality_notes.md)",
+    "collateral_flag": "repeats loan_type exactly",
+    "customer_since": "dates contradict the customer's own loans",
+    "collections (coll_*)": "unreliable dates and recorded after origination"
+  },
+  "logistic_features": {
+    "numeric": [
+      "annual_income",
+      "years_employed",
+      "years_at_residence",
+      "num_dependents",
+      "loan_to_income",
+      "interest_rate_pct",
+      "n_loans_customer",
+      "bureau_n_active",
+      "bureau_n_written_off",
+      "bureau_mean_dpd",
+      "bureau_n_dpd_30_plus",
+      "bureau_debt_to_income",
+      "bureau_share_non_bank",
+      "rep_n_late",
+      "rep_n_missed",
+      "rep_max_dpd",
+      "rep_n_missed_last3"
+    ],
+    "categorical": [
+      "loan_type",
+      "employment_type",
+      "education_level",
+      "region",
+      "city_tier",
+      "housing_type",
+      "occupation_sector",
+      "disbursal_channel"
+    ],
+    "dropped_by_sign_check": [
+      "bureau_active_utilization",
+      "bureau_no_file",
+      "rep_months_since_missed",
+      "rep_max_missed_streak"
+    ],
+    "left_out_as_duplicates": [
+      "loan_amount",
+      "tenure_months",
+      "emi_to_income",
+      "bureau_n_lines",
+      "bureau_written_off_share",
+      "bureau_max_dpd",
+      "bureau_total_outstanding",
+      "rep_mean_dpd",
+      "rep_mean_dpd_last3",
+      "rep_paid_ratio",
+      "rep_dpd_trend"
+    ]
+  },
+  "risk_bands": [
+    [
+      0.1,
+      "Low"
+    ],
+    [
+      0.2,
+      "Medium"
+    ],
+    [
+      0.35,
+      "High"
+    ],
+    [
+      1.01,
+      "Very High"
+    ]
+  ],
+  "design_checks": {
+    "age": {
+      "test_auc_without": 0.6872544221133047,
+      "test_auc_with": 0.6847216327592345,
+      "adverse_impact_ratio_test_without": {
+        "21-25": 0.729,
+        "26-35": 0.824,
+        "36-45": 0.881,
+        "46-55": 0.921,
+        "56+": 1.0
+      },
+      "adverse_impact_ratio_test_with": {
+        "21-25": 0.528,
+        "26-35": 0.716,
+        "36-45": 0.847,
+        "46-55": 0.93,
+        "56+": 1.0
+      }
+    },
+    "collections": {
+      "features": [
+        "coll_n_events",
+        "coll_n_events_raw",
+        "coll_total_recovered"
+      ],
+      "test_auc_without": 0.6872544221133047,
+      "test_auc_with": 0.6868086169601051
+    }
+  }
+}

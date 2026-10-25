@@ -1,0 +1,43 @@
+{
+  "accounts": 14685,
+  "flagged": 815,
+  "flagged_share": 0.05549880830779707,
+  "portfolio_default_rate": 0.1609805924412666,
+  "flagged_default_rate": 0.3239263803680982,
+  "unflagged_default_rate": 0.1514059120403749,
+  "lift": 2.012207654697767,
+  "precision": 0.3239263803680982,
+  "recall": 0.1116751269035533,
+  "share_flagged_also_model_high_risk": 0.8012269938650307,
+  "flagged_but_model_low_or_medium": {
+    "accounts": 162,
+    "default_rate": 0.15432098765432098
+  },
+  "by_trigger": {
+    "Peer outlier": {
+      "accounts": 735,
+      "default_rate": 0.33197278911564626,
+      "lift": 2.062191374011533
+    },
+    "Affordability breach": {
+      "accounts": 79,
+      "default_rate": 0.45569620253164556,
+      "lift": 2.8307524256248793
+    },
+    "Payment shock": {
+      "accounts": 68,
+      "default_rate": 0.22058823529411764,
+      "lift": 1.3702784413257687
+    }
+  },
+  "by_severity": {
+    "High": {
+      "accounts": 205,
+      "default_rate": 0.47317073170731705
+    },
+    "Medium": {
+      "accounts": 610,
+      "default_rate": 0.27377049180327867
+    }
+  }
+}

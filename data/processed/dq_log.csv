@@ -1,0 +1,46 @@
+table,column,issue,rows_affected,pct_of_rows,action
+customers,customer_id,duplicate primary key,0,0.0,check passed
+loan_accounts,account_id,duplicate primary key,0,0.0,check passed
+bureau_credit,bureau_id,duplicate primary key,0,0.0,check passed
+collections_events,collection_event_id,duplicate primary key,0,0.0,check passed
+repayment_history,account_id + payment_month,same month recorded twice,0,0.0,check passed
+loan_accounts,customer_id,customer missing from customers table,0,0.0,check passed
+bureau_credit,customer_id,customer missing from customers table,0,0.0,check passed
+repayment_history,account_id,account missing from loan_accounts,0,0.0,check passed
+collections_events,account_id,account missing from loan_accounts,0,0.0,check passed
+customers,gender,inconsistent labels 'M' / 'F',600,6.0,mapped to 'Male' / 'Female'
+customers,years_employed,missing for Unemployed customers,23,0.23,set to 0 (every other Unemployed customer has 0)
+customers,years_employed,longer than age - 16 (impossible work history),726,7.26,"capped at age - 16, flagged"
+customers,years_employed,missing,477,4.77,"median of the same employment type, flagged"
+customers,num_dependents,missing,500,5.0,"median (1), flagged"
+customers,years_at_residence,missing,500,5.0,"median (2.8), flagged"
+customers,years_at_residence,longer than the customer's age,5,0.05,capped at age
+customers,annual_income,"sits exactly at the 12,000 minimum (lower values look clipped)",76,0.76,"kept, flagged"
+customers,annual_income,"Unemployed but earning above the employed median (80,700)",22,0.22,kept (could be pension or rental income); needs income verification
+customers,customer_since,later than the customer's own first loan,5673,56.73,unreliable: relationship_start = earlier of the two dates; not used in the model
+loan_accounts,interest_rate_pct,missing,294,2.0,"back-solved from emi_due, loan_amount and tenure with the EMI formula (max error on known rows: 0.011 pct points), flagged"
+loan_accounts,collateral_flag,disagrees with loan_type (Mortgage / Auto Loan = secured),0,0.0,"check passed; the flag only repeats loan_type, so it is left out of the model"
+loan_accounts,loan_amount,"sits exactly at the 1,000 minimum (lower values look clipped)",292,1.99,"kept, flagged"
+loan_accounts,loan_purpose,"does not fit the product, e.g. a Mortgage for 'Vehicle Purchase' (purpose is unrelated to product: Cramer's V = 0.023)",4475,30.47,"kept for display, flagged, left out of the model"
+loan_accounts,origination_date,12-month repayment window ends after the last loan date (data has no snapshot date),2476,16.86,as-of date set to 2024-12-31 so every window is complete
+bureau_credit,customer_id,customer has no bureau record (thin file),1008,10.08,"bureau_no_file = 1; counts set to 0, DPD and ratio features left blank"
+bureau_credit,account_status,status disagrees with balance or close date,0,0.0,check passed
+bureau_credit,outstanding_amount,above the sanctioned amount,0,0.0,check passed
+bureau_credit,date_closed,before date_opened,0,0.0,check passed
+bureau_credit,days_past_due,missing on Closed lines,260,1.13,set to 0 (every other Closed line reports 0)
+bureau_credit,days_past_due,missing on Active / Written-Off lines,429,1.87,"median of the same status, flagged"
+bureau_credit,date_opened,after the 2024-12-31 as-of date,2898,12.61,flagged; bureau dates are not used in features
+bureau_credit,date_closed,after the as-of date (latest: 2029-12-24),4673,20.34,flagged; bureau dates are not used in features
+bureau_credit,date_opened,opened after the customer's first loan (not a point-in-time pull),15523,67.55,kept as a current bureau snapshot; production needs bureau data as of each application date
+repayment_history,payment_month,account without exactly months 1-12,0,0.0,check passed
+repayment_history,payment_status,disagrees with days_past_due / emi_paid,0,0.0,check passed
+repayment_history,emi_due,changes within an account,0,0.0,check passed
+repayment_history,days_past_due,90+ days past due inside the 12-month window,0,0.0,"check passed: default is not visible in the window, so repayment features do not leak the target"
+repayment_history,outstanding_balance,month-12 balance is more than 5% of the loan away from the loan's own payment schedule (accounts that never missed a payment; e.g. 12-month loans still show ~38% outstanding),4715,55.0,not used as exposure: exposure = original loan_amount
+collections_events,event_date,dated before the loan was originated,3875,44.88,"excluded from collections metrics, flagged"
+collections_events,outcome,'Payment Received' but 0 recovered,1287,14.9,flagged
+collections_events,outcome,'No Response' but money recovered,443,5.13,flagged
+collections_events,action_type,'Written-Off Referral' on a loan marked as performing,1159,13.42,flagged
+collections_events,amount_recovered,more than the original loan amount,95,1.1,flagged
+collections_events,(whole table),dates unreliable and no predictive lift beyond repayment history (checked in the audit),8635,100.0,shown in the dashboard only; left out of the model
+loan_accounts,emi,monthly payment is larger than the borrower's whole monthly income,79,0.54,"kept (the exposure is real), flagged; would fail any affordability check at origination"
