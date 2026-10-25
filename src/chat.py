@@ -48,13 +48,18 @@ SUGGESTED_QUESTIONS = [
 
 
 def api_key():
-    """NVIDIA key from the environment or .streamlit/secrets.toml (never stored in code)."""
+    """NVIDIA key from the environment, .streamlit/secrets.toml, or Streamlit's own secrets store (where
+    Streamlit Community Cloud keeps it). Never stored in code."""
     if os.environ.get("NVIDIA_API_KEY"):
         return os.environ["NVIDIA_API_KEY"]
     secrets = ROOT / ".streamlit" / "secrets.toml"
     if secrets.exists():
         return tomllib.loads(secrets.read_text()).get("NVIDIA_API_KEY")
-    return None
+    try:
+        import streamlit as st
+        return st.secrets.get("NVIDIA_API_KEY")
+    except Exception:  # no secrets configured anywhere: the chat runs offline
+        return None
 
 
 # ---------------------------------------------------------------- tools (all numbers come from here)

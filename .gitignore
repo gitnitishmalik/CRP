@@ -11,10 +11,8 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 
-# generated outputs (rebuilt by the pipeline), except the brief's required output: the clean dataset and its DQ log
-data/processed/*
-!data/processed/accounts_clean.csv
-!data/processed/dq_log.csv
+# data/processed/ is committed (rebuilt identically by run_pipeline.py) so a hosted copy of the dashboard starts
+# without running the pipeline; analysts' review logs stay local
 data/review/
 
 # os / editor
