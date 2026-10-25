@@ -77,6 +77,8 @@ history, with an analyst confirm / dismiss queue (**Bonus AI → Anomaly review*
 Python 3.11+ (built on 3.13).
 
 ```bash
+git clone https://github.com/gitnitishmalik/CRP.git
+cd CRP
 pip install -r requirements.txt
 python run_pipeline.py          # clean -> train -> score -> anomalies (under 2 minutes)
 streamlit run app/app.py        # dashboard at http://localhost:8501
